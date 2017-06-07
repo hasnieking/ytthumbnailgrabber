@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>YouTube Thumbnail Grabber</title>
+<meta charset="utf-8">
+
+<meta name="Description" content="Grab and download a YouTube video's thumbnails at various sizes including HD">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="YouTube thumbnail grabber">
+<meta property="og:site_name" content="YouTube Thumbnail Grabber">
+<meta property="og:description" content="Grab and download a YouTube video's thumbnails at various sizes including HD.">
+
+
+
+	
+<style>
+body {font-family:verdana,sans-serif;text-align:center;}
+#dickbar {margin:10px auto;position:relative;}
+#thingy {margin:2%;top:20px;position:relative;}
+
+</style>
+
+<script type="text/javascript">
+
+function youtube_parser(){
+	url = document.getElementById('yt').value;
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match&&match[7].length==11){
+          
+  	 b1.src='http://img.youtube.com/vi/' + match[7] + '/default.jpg';
+  	 b2.src='http://img.youtube.com/vi/' + match[7] + '/1.jpg';
+  	 b3.src='http://img.youtube.com/vi/' + match[7] + '/2.jpg';
+  	 b4.src='http://img.youtube.com/vi/' + match[7] + '/3.jpg';
+  	 b5.src='http://img.youtube.com/vi/' + match[7] + '/hqdefault.jpg';
+  	 b6.src='http://img.youtube.com/vi/' + match[7] + '/mqdefault.jpg';
+	 b7.src='http://img.youtube.com/vi/' + match[7] + '/sddefault.jpg';
+  	 b8.src='http://img.youtube.com/vi/' + match[7] + '/maxresdefault.jpg';
+         
+    }
+}
+
+function blurit(){
+	document.getElementById('yt').blur();
+}
+
+function grabit(){
+	setTimeout("blurit()", 1000);
+}
+
+</script>
+
+
+</head>
+	
+	<body>
+
+
+<div id="dickbar">
+<p>YouTube Thumbnail Grabber
+</div>
+
+
+<div id="thingy">
+
+
+<center>
+
+<p>
+PASTE YOUTUBE URL<p>
+
+<input type="textfield" name="ytname" id="yt"  style="height:40px;margin-bottom:2em;width:66%;mix-width:300px;border:2px solid #ddd;background-color:#fafafa" onBlur="youtube_parser();" onPaste="grabit();">
+
+<p>THUMBNAILS FOR THIS VIDEO<P><img style="width:25px;height:auto">
+<p>default.jpg<P>
+<img name="b1" src="">
+<p>1.jpg<P>
+<img name="b2" src="">
+<p>2.jpg<P>
+<img name="b3" src="">
+<p>3.jpg<P>
+<img name="b4" src="">
+<p>hqdefault.jpg<P>
+<img name="b5" src="">
+<p>mqdefault.jpg<P>
+<img name="b6" src="">
+<p>sddefault.jpg<P>
+<img name="b7" src="">
+<p>maxresdefault.jpg<P>
+<img name="b8" src="">
+</center>
+
+
+</div>
+
+</body>
+</html>
+	
